@@ -1,0 +1,55 @@
+.registro {
+  background-color: #cd3535;
+  color: #fff;
+  padding: 35px;
+  width: 450px;
+  margin: 60px auto;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.registro h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.registro label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.registro input[type="text"],
+.registro input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registro button {
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.registro button:hover {
+  background-color: #e3f030;
+  color: rgb(14, 13, 13);
+}
+
+.contenedor {
+  background-color: rgba(15, 23, 43, 0.9);
+}
+
+a {
+  /* text-decoration: underline; */
+  color:  rgba(15, 23, 43, 0.9);
+}
