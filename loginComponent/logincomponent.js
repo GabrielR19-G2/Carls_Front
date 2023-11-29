@@ -8,11 +8,11 @@ export class LoginComponent extends HTMLElement {
         const shadow = this.attachShadow({ mode: "open" });
         this.setupForm();
 
-        this.#agregarEstilo(shadow);
+        // this.#agregarEstilo(shadow);
         this.#render(shadow);
     }
 
-    #render(shadow) {
+    async #render(shadow) {
          
         await fetch('loginComponent/login.html')
         .then(response => response.text())
@@ -42,12 +42,12 @@ export class LoginComponent extends HTMLElement {
     
     
 
-    #agregarEstilo(shadow) {
-        let link = document.createElement("link");
-        link.setAttribute("rel", "stylesheet");
-        link.setAttribute("href", "/frontend/microfrontends/loginComponent/login.css");
-        shadow.appendChild(link);
-    }
+    // #agregarEstilo(shadow) {
+    //     let link = document.createElement("link");
+    //     link.setAttribute("rel", "stylesheet");
+    //     link.setAttribute("href", "/frontend/microfrontends/loginComponent/login.css");
+    //     shadow.appendChild(link);
+    // }
 }
 
-customElements.define('login-component', LoginComponent);
+// customElements.define('login-component', LoginComponent);

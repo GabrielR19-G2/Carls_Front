@@ -1,5 +1,6 @@
 // Importar componentes 
 import { HeaderComponent } from "./HeaderComponent/headerComponent.js"
+import {LoginComponent} from "./loginComponent/logincomponent.js"
 import FooterComponent from "./FooterComponent/footer.js"
 import ContentComponent from "./ContentComponent/content.js"
 
@@ -25,8 +26,8 @@ function inicio() {
 function iniciarSesion() {
     const body = document.querySelector('body')
     body.innerHTML = `
-    <header></header>
-    <
+
+    <login-info> </login-info>
     <footer-info></footer-info>
     `
 }
