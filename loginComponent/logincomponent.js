@@ -1,4 +1,3 @@
-// loginComponent.js
 export class LoginComponent extends HTMLElement {
     constructor() {
         super();
@@ -33,7 +32,6 @@ export class LoginComponent extends HTMLElement {
                 const username = loginForm.querySelector('#username').value;
                 const password = loginForm.querySelector('#password').value;
     
-                // Add your login logic here
                 console.log('Username:', username);
                 console.log('Password:', password);
             });
@@ -50,4 +48,3 @@ export class LoginComponent extends HTMLElement {
     // }
 }
 
-// customElements.define('login-component', LoginComponent);
