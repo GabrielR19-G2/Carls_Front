@@ -1,95 +1,41 @@
-/*** Footer ***/
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    border: 1px solid #FFFFFF;
-    border-radius: 35px;
-    transition: .3s;
-}
-
-.footer .btn.btn-social:hover {
-    color: var(--primary);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
-}
-
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.footer .btn.btn-link:hover {
-    letter-spacing: 1px;
-    box-shadow: none;
-}
-
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
-
-.footer .copyright a {
-    color: var(--light);
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
-
-h1 {
-    letter-spacing: .25rem;
-}
-
-h1#logo {
-    -webkit-text-stroke: .0005cm rgb(180, 180, 180);
-}
-
-img#logo-footer {
-    width: 170px;
-    height: 200px;
-}
 /* AQUÍ EMPIEZA 28 NOV */
 
-
-.footer{
-    background-color: green;
+.footer {
+  display: grid;
+  border: 3px solid green;
+  text-align: center;
 }
 
-footer img{
-    width: 9%;
-    padding-left: 20px;
+footer img {
+  width: 9%;
+  padding-left: 20px;
 }
 
-#CarlsFooter{
-    font-family: sans-serif;
-    font-weight: 900;
-    font-size:30px;
-    color:yellow;
+#CarlsFooter {
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: yellow;
+
+  text-align: end;
+  background-color: burlywood;
+}
+p {
+  color: yellow;
+  text-align: center;
+}
+.contactos {
+    background-color: goldenrod;
+}
+#pin {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -115px;
+
+  border-radius: 50% 50% 50% 0;
+  border: 4px solid #fff;
+  width: 20px;
+  height: 20px;
+  transform: rotate(-45deg);
 }
