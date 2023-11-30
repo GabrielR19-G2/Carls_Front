@@ -7,7 +7,7 @@ export default class FooterComponent extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' })
         this.#render(shadow);
         this.initFooter();
-        this.#agregarEstilo(shadow);
+        // this.#agregarEstilo(shadow);
     }
 
     initFooter() {

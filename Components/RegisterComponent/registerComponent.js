@@ -4,11 +4,16 @@ export class RegistroComponent extends HTMLElement {
         super();
     }
 
+
     connectedCallback() {
         const shadow = this.attachShadow({ mode: "open" });
         this.setupForm();
-        this.#agregarEstilo(shadow);
         this.#render(shadow);
+        this.initRegister();
+    }
+
+    initRegister() {
+        console.log('Error registerComponent');
     }
 
     #render(shadow) {
@@ -44,33 +49,33 @@ export class RegistroComponent extends HTMLElement {
     }
     setupForm() {
         const registroForm = this.shadowRoot.querySelector('#registroForm');
-    
+
         if (registroForm) {
             registroForm.addEventListener('submit', function (event) {
                 event.preventDefault();
-    
+
                 const username = registroForm.querySelector('#username').value;
                 const password = registroForm.querySelector('#password').value;
-    
+
                 console.log('Username:', username);
                 console.log('Password:', password);
-    
+
                 return false;
             });
         }
     }
-    
+
 
 
     #agregarEstilo(shadow) {
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");
         // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
-        link.setAttribute("href", "/frontend/microfrontends/RegisterComponent/register.css");
+        link.setAttribute("href", "../Components/FooterComponent/footer.css");
         shadow.appendChild(link);
     }
 
 
-    
+
 }
 customElements.define('registro-component', RegistroComponent);

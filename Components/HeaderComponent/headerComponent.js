@@ -42,7 +42,7 @@ export class HeaderComponent extends HTMLElement {
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");
         // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
-        link.setAttribute("href", "/frontend/microfrontends/RegisterComponent/register.css");
+        link.setAttribute("href", "../../src/output.css");
         shadow.appendChild(link);
     }
 }

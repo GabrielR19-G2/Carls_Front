@@ -15,9 +15,9 @@ function inicio() {
     const body = document.querySelector("body");
 
     body.innerHTML = `
-     <link href="./output.css" rel="stylesheet">
-
-        
+    <link href="./output.css" rel="stylesheet">
+        <header-info></header-info>
+        <content-info></content-info>
         <footer-info></footer-info>
     `;
     // <navbar-info></navbar-info> -> No necesitamos el navbar, el header cumple la misma función
