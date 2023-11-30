@@ -1,0 +1,18 @@
+{
+  "name": "carlsfrontfinal",
+  "version": "1.0.0",
+  "description": "Proyecto web Carls jr front end",
+  "main": "app.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./src/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Carls_Front"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
