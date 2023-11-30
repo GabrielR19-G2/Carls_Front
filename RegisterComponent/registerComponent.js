@@ -1,5 +1,4 @@
-// registercomponent.js
-export class RegistroComponent extends HTMLElement {
+export class RegisterComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -7,70 +6,36 @@ export class RegistroComponent extends HTMLElement {
     connectedCallback() {
         const shadow = this.attachShadow({ mode: "open" });
         this.setupForm();
-        this.#agregarEstilo(shadow);
+
+        // this.#agregarEstilo(shadow);
         this.#render(shadow);
     }
 
-    #render(shadow) {
-        shadow.innerHTML += `
-        <!-- registerComponent.html -->
-        <div class="contenedor">
-            <div class="registro">
-                <h2>Regístrate</h2>
-                <p class="hint-text">Crea tu cuenta es gratis y sólo te llevará un minuto.</p>
-                <!-- Agrega un ID al formulario -->
-                <form id="registroForm">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required />
-        
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required />
-                
-                    <div class="form-group">
-                        <label class="form-check-label"><input type="checkbox" required="required"> Acepto las <a href="#">Condiciones de uso</a> y las <a href="#"> Políticas de privacidad</a></label>
-                    </div>
-
-                    <button type="submit">Crear cuenta</button>
-
-                </form>
-                <br>
-                <div class="text-red">¿Ya tiene una cuenta? <a class="text-red" href="login.html">Iniciar Sesión</a></div>                 
-                </div>
-                
-            </div>
-        </div>
-        
-        `;
+    async #render(shadow) {
+         
+        await fetch('RegisterComponent/register.html')
+        .then(response => response.text())
+        .then(html => {
+            shadow.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error al cargar el contenido del register:', error);
+        });
     }
     setupForm() {
-        const registroForm = this.shadowRoot.querySelector('#registroForm');
+        const registerForm = this.shadowRoot.querySelector('#registerForm'); // Usa shadowRoot en lugar de this
     
-        if (registroForm) {
-            registroForm.addEventListener('submit', function (event) {
+        if (registerFormForm) {
+            registerFormForm.addEventListener('submit', function (event) {
                 event.preventDefault();
     
-                const username = registroForm.querySelector('#username').value;
-                const password = registroForm.querySelector('#password').value;
+                const username = registerFormForm.querySelector('#username').value;
+                const password = registerFormForm.querySelector('#password').value;
     
                 console.log('Username:', username);
                 console.log('Password:', password);
-    
-                return false;
             });
         }
     }
-    
 
-
-    #agregarEstilo(shadow) {
-        let link = document.createElement("link");
-        link.setAttribute("rel", "stylesheet");
-        // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
-        link.setAttribute("href", "/frontend/microfrontends/RegisterComponent/register.css");
-        shadow.appendChild(link);
-    }
-
-
-    
 }
-customElements.define('registro-component', RegistroComponent);
