@@ -1,5 +1,3 @@
-// menu.js
-
 export class MenuComponent extends HTMLElement {
     constructor() {
         super();
@@ -9,7 +7,7 @@ export class MenuComponent extends HTMLElement {
         this.loadContent();
     }
 
-    loadContent() {
+    async #render() {
         fetch('./microfrontends/Menu/menu.html') 
             .then(response => response.text())
             .then(html => {

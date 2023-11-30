@@ -16,7 +16,7 @@ export default class ContentComponent extends HTMLElement {
     async #render(shadow) {
         // const footerContainer = document.getElementById('footer-container');
 
-        await fetch('./ContentComponent/content.html')
+        await fetch('../Components//ContentComponent/content.html')
             .then(res => res.text())
             .then(html => {
                 shadow.innerHTML = html;

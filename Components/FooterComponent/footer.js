@@ -7,6 +7,7 @@ export default class FooterComponent extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' })
         this.#render(shadow);
         this.initFooter();
+        this.#agregarEstilo(shadow);
     }
 
     initFooter() {
@@ -16,7 +17,7 @@ export default class FooterComponent extends HTMLElement {
     async #render(shadow) {
         // const footerContainer = document.getElementById('footer-container');
 
-        await fetch('./FooterComponent/footer.html')
+        await fetch('../Components//FooterComponent/footer.html')
             .then(res => res.text())
             .then(html => {
                 shadow.innerHTML = html;
@@ -26,6 +27,16 @@ export default class FooterComponent extends HTMLElement {
             });
 
     }
+    #agregarEstilo(shadow) {
+        console.log('enrta');
+        let link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
+        link.setAttribute("href", "../Components/FooterComponent/footer.css");
+        shadow.appendChild(link);
+        console.log(link);
+    }
 }
+
 
 // customElements.define('footer-component', FooterComponent);

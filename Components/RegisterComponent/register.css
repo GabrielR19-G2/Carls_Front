@@ -1,4 +1,4 @@
-.registro {
+/* .registro {
   background-color: #cd3535;
   color: #fff;
   padding: 35px;
@@ -51,5 +51,7 @@
 
 a {
   /* text-decoration: underline; */
-  color:  rgba(15, 23, 43, 0.9);
-}
+  /* color:  rgba(15, 23, 43, 0.9); */
+/* }  */
+
+@import url('../../src/output.css');

@@ -1,6 +1,8 @@
-header {
+/* header {
   background-color: greenyellow;
 }
 .container {
   background-color: violet;
-}
+} */
+
+@import url('../../src/output.css');

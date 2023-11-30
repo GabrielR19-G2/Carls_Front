@@ -7,12 +7,13 @@ export class HeaderComponent extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' })
         await this.#render(shadow);
         this.#inicial(shadow)
+        this.#agregarEstilo(shadow)
     }
 
     async #render(shadow) {
         // const headerContainer = document.getElementById('header-container');
-
-        await fetch('HeaderComponent/headerComponent.html')
+        // Components\HeaderComponent\headerComponent.html
+        await fetch('../Components/HeaderComponent/headerComponent.html')
             .then(response => response.text())
             .then(html => {
                 shadow.innerHTML = html;
@@ -37,7 +38,13 @@ export class HeaderComponent extends HTMLElement {
 
         navegacion.appendChild(btnIniciarSesion);
     }
-
+    #agregarEstilo(shadow) {
+        let link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
+        link.setAttribute("href", "/frontend/microfrontends/RegisterComponent/register.css");
+        shadow.appendChild(link);
+    }
 }
 
 // customElements.define('header-component', HeaderComponent);

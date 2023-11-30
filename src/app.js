@@ -1,11 +1,11 @@
 // Importar componentes 
-import { HeaderComponent } from "./HeaderComponent/headerComponent.js"
-import {LoginComponent} from "./loginComponent/logincomponent.js"
-import FooterComponent from "./FooterComponent/footer.js"
-import ContentComponent from "./ContentComponent/content.js"
+import { HeaderComponent } from "../Components/HeaderComponent/headerComponent.js"
+import { LoginComponent } from "../Components/loginComponent/logincomponent.js"
+import FooterComponent from "../Components/FooterComponent/footer.js"
+import ContentComponent from "../Components/ContentComponent/content.js"
 
 document.addEventListener("DOMContentLoaded", function () {
-    page("/indeic.html", () => inicio());
+    page("/src/indeic.html", () => inicio());
     page("/inicioSesion", () => iniciarSesion()) //esto sale de un click del botón del header
     page();
 })
@@ -15,9 +15,9 @@ function inicio() {
     const body = document.querySelector("body");
 
     body.innerHTML = `
-        <header-info></header-info>
-       
-        <content-info></content-info>
+     <link href="./output.css" rel="stylesheet">
+
+        
         <footer-info></footer-info>
     `;
     // <navbar-info></navbar-info> -> No necesitamos el navbar, el header cumple la misma función

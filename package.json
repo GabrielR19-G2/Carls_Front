@@ -4,7 +4,7 @@
   "description": "Proyecto web Carls jr front end",
   "main": "app.js",
   "scripts": {
-    "build-css":"tailwindcss build src/styles.css -o css/styles.css"
+    "build-css": "tailwindcss -i ./src/input.css -o ./src/output.css"
   },
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "tailwindcss": "^3.3.5"
   }
 }
