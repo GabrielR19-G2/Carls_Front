@@ -6,8 +6,6 @@ export class HeaderComponent extends HTMLElement {
     async connectedCallback() {
         const shadow = this.attachShadow({ mode: 'open' })
         await this.#render(shadow);
-        this.#inicial(shadow)
-        this.#agregarEstilo(shadow)
     }
 
     async #render(shadow) {
@@ -23,21 +21,6 @@ export class HeaderComponent extends HTMLElement {
             });
     }
 
-    #header(shadow) {
-        this.#inicial(shadow);
-    }
-    #inicial(shadow) {
-        let navegacion = shadow.querySelector('.nav-header')
-        let btnIniciarSesion = document.createElement('button')
-        btnIniciarSesion.setAttribute("id", "btn-inicioSesion")
-        btnIniciarSesion.innerHTML = "Iniciar sesión!!"
-
-        btnIniciarSesion.addEventListener("click", function () {
-            page("/inicioSesion")
-        })
-
-        navegacion.appendChild(btnIniciarSesion);
-    }
     #agregarEstilo(shadow) {
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");

@@ -1,20 +1,42 @@
 <link href="../HeaderComponent/headerComponent.css">
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" /></head>
 
 <header>
-    <div class="nav-header">
-        <nav>
-            <a class="navbar-item" href="/">
-                <img src="https://carlsjrmx.netlify.app/assets/logo.svg" width="152" height="45"
-                    alt="Ir a página principal" />
-            </a>
-            <a href="index.html">Inicio</a>
-            <a href="about.html">Nosotros</a>
-            <a href="service.html">Servicios</a>
-            <a href="../Menu/menu.html">Menú</a>
-            <a href="contact.html">Sucursales</a>
-            <a href="../loginComponent/login.html">Iniciar sesión</a>
-            <!-- <div class="user"></div> -->
-        </nav>
+    <div>
+
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://carlsjrmx.netlify.app/assets/logo.svg"class="h-8">
+            <span class="self-text-2xl font-semibold whitespace-nowrap dark:text-white">Carl's Jr</span>
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Inicia Sesión</button>
+        </div>
+    </div>
+</nav>
+<nav class="bg-gray-50 dark:bg-gray-700">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+            <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                <li>
+                    <a href="#" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Inicio</a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Menú</a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Sucursales</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
         <div>
             <h1>Disfrute de nuestra<br>deliciosa
