@@ -1,26 +1,17 @@
-<link rel="stylesheet" href="register.css" />
-<div class="contenedor">
-  <div class="register">
-    <h2 class="titulo">Registrate para ordenar en linea</h2>
-    <form class="formulario-register">
-      <label class="user" for="username">Usuario:</label>
-      <input
-        class="user-input"
-        type="text"
-        id="username"
-        name="username"
-        required
-      />
+<link rel="stylesheet" href="../loginComponent/login.css">
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 
-      <label class="password" for="password">Contraseña:</label>
-      <input
-        class="password-input"
-        type="password"
-        id="password"
-        name="password"
-        required
-      />
-      <button class="crear-btn" type="submit">Crear cuenta</button>
-    </form>
-  </div>
-</div>
+<form class="max-w-sm mx-auto">
+  <h2 class="mb-5 text-red-300 text-xl font-medium text-gray-900 dark:text-white">Regístrate para ordenar en línea</h2>
+  <form class="formulario-register">
+    <div class="mb-5">
+      <label for="username" class="block mb-2 text-red-300 text-xl font-medium text-gray-900 dark:text-white">Usuario:</label>
+      <input type="text" id="username" name="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-red-500" required />
+    </div>
+    <div class="mb-5">
+      <label for="password" class="block mb-2 text-red-300 text-xl font-medium text-gray-900 dark:text-white">Contraseña:</label>
+      <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-red-500" required />
+    </div>
+    <button type="submit" class="crear-btn text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-red-700 dark:focus:ring-yellow-500">Crear cuenta</button>
+  </form>
+</form>
