@@ -12,16 +12,19 @@ export class LoginComponent extends HTMLElement {
     }
 
     async #render(shadow) {
-         
-        await fetch('loginComponent/login.html')
-        .then(response => response.text())
-        .then(html => {
-            shadow.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('Error al cargar el contenido del login:', error);
-        });
+        // const headerContainer = document.getElementById('header-container');
+        // Components\HeaderComponent\headerComponent.html
+        await fetch('../Components/loginComponent/login.html')
+            .then(response => response.text())
+            .then(html => {
+                shadow.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error al cargar el contenido del Header:', error);
+            });
     }
+
+
     setupForm() {
         const loginForm = this.shadowRoot.querySelector('#loginForm'); // Usa shadowRoot en lugar de this
     

@@ -35,6 +35,7 @@ export class HeaderComponent extends HTMLElement {
         let menu = shadow.querySelector("#menu");
         let mapa = shadow.querySelector("#mapa");
 
+        let login = shadow.querySelector("#Login");
 
         inicio.addEventListener("click", function () {
             page("/inicio")
@@ -46,6 +47,9 @@ export class HeaderComponent extends HTMLElement {
 
         mapa.addEventListener("click", function () {
             page("/mostrarMapa")
+        })
+        login.addEventListener("click", function () {
+            page("/inicioSesion")
         })
     }
 }
