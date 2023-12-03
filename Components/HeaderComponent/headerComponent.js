@@ -6,8 +6,7 @@ export class HeaderComponent extends HTMLElement {
     async connectedCallback() {
         const shadow = this.attachShadow({ mode: 'open' })
         await this.#render(shadow);
-        this.#inicial(shadow)
-        this.#agregarEstilo(shadow)
+        this.#ListenerNav(shadow);
     }
 
     async #render(shadow) {
@@ -23,27 +22,35 @@ export class HeaderComponent extends HTMLElement {
             });
     }
 
-    #header(shadow) {
-        this.#inicial(shadow);
-    }
-    #inicial(shadow) {
-        let navegacion = shadow.querySelector('.nav-header')
-        let btnIniciarSesion = document.createElement('button')
-        btnIniciarSesion.setAttribute("id", "btn-inicioSesion")
-        btnIniciarSesion.innerHTML = "Iniciar sesión!!"
-
-        btnIniciarSesion.addEventListener("click", function () {
-            page("/inicioSesion")
-        })
-
-        navegacion.appendChild(btnIniciarSesion);
-    }
     #agregarEstilo(shadow) {
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");
         // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
         link.setAttribute("href", "../../src/output.css");
         shadow.appendChild(link);
+    }
+
+    #ListenerNav(shadow) {
+        let inicio = shadow.querySelector("#inicio");
+        let menu = shadow.querySelector("#menu");
+        let mapa = shadow.querySelector("#mapa");
+
+        let login = shadow.querySelector("#Login");
+
+        inicio.addEventListener("click", function () {
+            page("/inicio")
+        })
+
+        menu.addEventListener("click", function () {
+            page("/mostrarMenu")
+        })
+
+        mapa.addEventListener("click", function () {
+            page("/mostrarMapa")
+        })
+        login.addEventListener("click", function () {
+            page("/inicioSesion")
+        })
     }
 }
 
