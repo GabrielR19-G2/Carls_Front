@@ -1,4 +1,4 @@
-export class MenuComponent extends HTMLElement {
+export default class MapaComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -11,24 +11,15 @@ export class MenuComponent extends HTMLElement {
     async #render(shadow) {
         // const footerContainer = document.getElementById('footer-container');
         console.log('Entra');
-        await fetch('../Components/MenuComponent/menu.html')
+        await fetch('../Components/MapaComponent/mapaComponent.html')
             .then(res => res.text())
             .then(html => {
                 shadow.innerHTML = html;
             })
             .catch(error => {
-                console.error('Error al cargar el contenido del footer:', error);
+                console.error('Error al cargar el contenido del Mapa:', error);
             });
 
     }
-
-    #ListenerMenu(shadow){
-        console.log('Entramos!');
-        let menu = shadow.querySelector('#menu')
-        menu.addEventListener("click", function(){
-            page("/mostrarMenu")
-        })
-    }
 }
 
-// customElements.define('menu-component', MenuComponent);

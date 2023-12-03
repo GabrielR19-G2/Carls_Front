@@ -6,6 +6,7 @@ export class HeaderComponent extends HTMLElement {
     async connectedCallback() {
         const shadow = this.attachShadow({ mode: 'open' })
         await this.#render(shadow);
+        this.#ListenerNav(shadow);
     }
 
     async #render(shadow) {
@@ -27,6 +28,25 @@ export class HeaderComponent extends HTMLElement {
         // Utiliza una ruta absoluta o relativa basada en la raíz del servidor
         link.setAttribute("href", "../../src/output.css");
         shadow.appendChild(link);
+    }
+
+    #ListenerNav(shadow) {
+        let inicio = shadow.querySelector("#inicio");
+        let menu = shadow.querySelector("#menu");
+        let mapa = shadow.querySelector("#mapa");
+
+
+        inicio.addEventListener("click", function () {
+            page("/inicio")
+        })
+
+        menu.addEventListener("click", function () {
+            page("/mostrarMenu")
+        })
+
+        mapa.addEventListener("click", function () {
+            page("/mostrarMapa")
+        })
     }
 }
 
