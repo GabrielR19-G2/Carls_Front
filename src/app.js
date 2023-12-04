@@ -8,6 +8,7 @@ import { MenuComponent } from "../Components/MenuComponent/menu.js"
 import MapaComponent from "../Components/MapaComponent/mapaContent.js"
 import { CarritoComponent } from "../Components/CarritoComponent/carrito.js";
 import { RegistroProductoComponent } from "../Components/RegistroProductoComponent/registroProducto.js"
+import {AboutComponent} from "../Components/AboutComponent/aboutComponent.js"
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     page("/registro", () => mostrarRegistro());
     page("/carrito", () => mostrarCarrito());
     page("/registroProducto", () => registrarProducto());
+    page("/about", () => mostrarAbout());
 
     page();
 })
@@ -88,6 +90,15 @@ function registrarProducto(){
     `;
 }
 
+function mostrarAbout(){
+    const body = document.querySelector('body');
+    body.innerHTML = `
+    <header-info></header-info>
+    <about-info></about-info>
+    <footer-info></footer-info>
+    `;
+}
+
 
 window.customElements.define('header-info', HeaderComponent);
 window.customElements.define('content-info', ContentComponent);
@@ -96,3 +107,4 @@ window.customElements.define('menu-info', MenuComponent);
 window.customElements.define('mapa-info', MapaComponent);
 window.customElements.define('footer-info', FooterComponent);
 window.customElements.define('registerproduct-info', RegistroProductoComponent);
+window.customElements.define('about-info', AboutComponent);
