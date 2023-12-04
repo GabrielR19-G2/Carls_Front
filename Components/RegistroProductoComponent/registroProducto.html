@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+<div class="bg-black">
+    <div class="max-w-md mx-auto bg-white rounded-md p-8">
+        <div class="flex items-center space-x-5">
+            <div class="block pl-2 font-semibold text-xl self-start text-gray-700">
+                <h2 class="leading-relaxed">Registrar producto</h2>
+                <p class="text-sm text-gray-500 font-normal leading-relaxed">¡Bienvenido, administrador!</p>
+            </div>
+        </div>
+
+        <div class="divide-y divide-gray-200">
+            <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                <div class="flex flex-col">
+                    <label for="nombre" class="leading-loose">Nombre: </label>
+                    <input id="nombre" type="text"
+                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Ingrese el nombre" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="descripcion" class="leading-loose">Descripción</label>
+                    <input id="descripcion" type="text"
+                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Ingrese la descripción" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="precio" class="leading-loose">Precio</label>
+                    <input id="precio" type="number"
+                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="categoria" class="leading-loose">Categoría</label>
+                    <input id="categoria" type="text"
+                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Ingrese la categoría" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="imagen" class="leading-loose">Cargar imagen</label>
+                    <input id="imagen"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        id="file_input" type="file" required>
+                    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+                </div>
+            </div>
+
+            <div class="pt-4 flex items-center space-x-4">
+                <button type="reset"
+                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-yellow-400 focus:outline-none ">
+                    <span class="mx-1">Cancelar</span>
+                </button>
+
+                <button id="registrar"
+                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-yellow-400 focus:outline-none ">
+                    <span class="mx-1">Registrar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

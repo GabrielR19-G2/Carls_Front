@@ -27,6 +27,7 @@ export class HeaderComponent extends HTMLElement {
     let mapa = shadow.querySelector("#mapa");
     let login = shadow.querySelector("#Login");
     let carrito = shadow.querySelector("#Carrito");
+    let registrarProducto = shadow.querySelector("#registroProducto");
 
     inicio.addEventListener("click", function () {
       page("/inicio");
@@ -46,6 +47,10 @@ export class HeaderComponent extends HTMLElement {
 
     carrito.addEventListener("click", function () { // Agrega esta línea
         page("/carrito");
+    });
+
+    registrarProducto.addEventListener("click", function(){
+      page("/registroProducto");
     });
   }
 
