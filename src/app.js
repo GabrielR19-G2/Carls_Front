@@ -106,5 +106,6 @@ window.customElements.define('login-info', LoginComponent);
 window.customElements.define('menu-info', MenuComponent);
 window.customElements.define('mapa-info', MapaComponent);
 window.customElements.define('footer-info', FooterComponent);
+window.customElements.define('register-info', RegisterComponent);
 window.customElements.define('registerproduct-info', RegistroProductoComponent);
 window.customElements.define('about-info', AboutComponent);

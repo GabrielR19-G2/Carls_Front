@@ -34,7 +34,6 @@ export class RegistroProductoComponent extends HTMLElement {
         const nombre = shadow.querySelector('#nombre').value;
         const descripcion = shadow.querySelector('#descripcion').value;
         const precio = shadow.querySelector('#precio').value;
-        console.log(precio);
         const categoria = shadow.querySelector('#categoria').value;
         const imagen = shadow.querySelector('#imagen').files[0];
 
@@ -43,13 +42,23 @@ export class RegistroProductoComponent extends HTMLElement {
             descripcion: descripcion,
             precio: precio,
             categoria: categoria,
-            imagen: imagen.name
+            imagen: '/img/' + imagen.name
         };
 
         this.#servicio.crearProducto(productData)
             .then(response => {
                 console.log('Producto registrado con éxito: ', response);
+
+                this.#limpiarFormulario(shadow);
             })
             .catch(error => console.error('Error al registrar producto: ', error));
+    }
+
+    #limpiarFormulario(shadow) {
+        shadow.querySelector('#nombre').value = '';
+        shadow.querySelector('#descripcion').value = '';
+        shadow.querySelector('#precio').value = '';
+        shadow.querySelector('#categoria').value = '';
+        shadow.querySelector('#imagen').value = '';
     }
 }

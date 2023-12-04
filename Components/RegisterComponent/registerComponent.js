@@ -1,41 +1,55 @@
+import { UsuarioServicio } from "../../Servicio/usuarioServicio.js";
+
 export class RegisterComponent extends HTMLElement {
+    #servicio = new UsuarioServicio();
+
     constructor() {
         super();
     }
 
     connectedCallback() {
-        this.render();
-        this.setupForm();
+        const shadow = this.attachShadow({ mode: "open" });
+        this.#render(shadow);
     }
 
-    render() {
-        fetch('../Components/RegisterComponent/register.html')  
+    async #render(shadow) {
+        await fetch('../Components/RegisterComponent/register.html')
             .then(response => response.text())
             .then(html => {
-                this.innerHTML = html;
+                shadow.innerHTML += html;
+                this.#setupEventListeners(shadow);
             })
-            .catch(error => {
-                console.error('Error al cargar el contenido del register:', error);
-            });
+            .catch(error => console.error('Error loading HTML: ', error));
     }
 
-    setupForm() {
-        const registerForm = this.querySelector('.formulario-register');
+    #setupEventListeners(shadow) {
+        const registrarButton = shadow.querySelector('#registrar');
 
-        if (registerForm) {
-            registerForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const username = registerForm.querySelector('.user-input').value;
-                const password = registerForm.querySelector('.password-input').value;
-
-                console.log('Username:', username);
-                console.log('Password:', password);
-            });
+        if (registrarButton) {
+            registrarButton.addEventListener('click', () => this.#handleRegistrarClick(shadow));
         }
     }
-}
 
-if (!customElements.get('register-info')) {
-    customElements.define('register-info', RegisterComponent);
+    #handleRegistrarClick(shadow) {
+        const usuario = shadow.querySelector('#username').value;
+        const contraseña = shadow.querySelector('#password').value;
+
+        const userData = {
+            usuario: usuario,
+            contraseña: contraseña
+        };
+        console.log('el ' + userData.usuario, userData.contraseña);
+        this.#servicio.crearUsuario(userData)
+            .then(response => {
+                console.log('Usuario registrado con éxito: ', response);
+
+                this.#limpiarFormulario(shadow);
+            })
+            .catch(error => console.error('Error al registrar producto: ', error));
+    }
+
+    #limpiarFormulario(shadow) {
+        shadow.querySelector('#password').value = '';
+        shadow.querySelector('#username').value = '';
+    }
 }

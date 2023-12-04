@@ -53,7 +53,7 @@ export class HeaderComponent extends HTMLElement {
     registrarProducto.addEventListener("click", function(){
       page("/registroProducto");
     });
-
+    
     about.addEventListener("click", function(){
       page("/about");
     });
